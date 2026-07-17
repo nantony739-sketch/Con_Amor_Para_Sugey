@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Librería para la lluvia de confeti profesional -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div class="scene" id="mainScene">
+    <div class="flower-field" id="flowerField"></div>
+
+    <div class="card" id="nameCard">
+      <h1>Antes de empezar...</h1>
+      <p>Escribe tu Nombre Prinsesa</p>
+      <input type="text" id="nameInput" placeholder="Escribe tu nombre" maxlength="30" autocomplete="off">
+      <br>
+      <button id="continueBtn">Continuar</button>
+    </div>
+
+    <div class="welcome" id="welcomeScreen">
+      <p class="eyebrow">Te damos la bienvenida</p>
+      <h2>a la niña más hermosa,<br><span class="name" id="welcomeName">Valeria</span></h2>
+      <button class="welcome-next" id="empecemosBtn">Empecemos</button>
+    </div>
+
+    <div class="letter" id="letterScreen">
+      <p class="eyebrow">Una carta para ti</p>
+      <p class="letter-text" id="letterText"></p>
+      <button class="letter-next" id="letterNextBtn">Siguiente</button>
+    </div>
+
+    <!-- Pantalla: Vamos a ello -->
+    <div class="letter" id="letsGoScreen">
+      <p class="eyebrow">Preparado...</p>
+      <p class="letter-text" style="font-style: normal; font-size: 1.5rem;">Tengo algo muy importante que preguntarte...</p>
+      <button id="letsGoBtn">Vamos a ello</button>
+    </div>
+
+    <!-- Pantalla: La propuesta oficial -->
+    <div class="letter" id="proposalScreen">
+      <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--coral); margin-bottom: 2rem;">¿Quieres ser mi novia oficialmente?</h2>
+      <div style="display: flex; gap: 1.5rem; justify-content: center;">
+        <button id="btnSi" style="background-color: #2ecc71; padding: 1rem 3rem; font-size: 1.2rem;">Sí</button>
+        <button id="btnNo" style="background-color: #e74c3c; padding: 1rem 3rem; font-size: 1.2rem;">No</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA RESPUESTA SÍ -->
+    <div class="result-screen response-si" id="screenSi">
+      <div class="landscape-animated sun-landscape"></div>
+      <div class="card card-result">
+        <h1 style="font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: #27ae60; margin-bottom: 1rem;">¡SÍ! ❤️</h1>
+        <p style="font-size: 1.25rem; line-height: 1.7; font-family: 'Lora', serif; color: var(--brown); margin-bottom: 1.5rem;">muchas gracias por hacermerme el hombre mas feliz del mundo</p>
+        <button class="btn-end" id="btnEndSi">Continuar</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA RESPUESTA NO -->
+    <div class="result-screen response-no" id="screenNo">
+      <div class="landscape-animated sunset-landscape"></div>
+      <div class="card card-result" style="max-width: 520px;">
+        <h1 style="font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: #c0392b; margin-bottom: 1rem;">Gracias por tu sinceridad 🙏</h1>
+        <p style="font-size: 1.15rem; line-height: 1.8; font-family: 'Lora', serif; color: var(--brown); margin-bottom: 1.5rem; text-align: center;">Si te prepare esto es porque siento que te estoy forzando a algo que tu no estas preparada, muchas gracias por intenatr y hacer ese esfuerzo de hacerlo. Me doy por vencido a ti y te dejo el camino libre cuidate mucho y que tengas exitos en tu vida</p>
+        <button class="btn-end" id="btnEndNo">Continuar</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA DE CRÉDITOS FINALES -->
+    <div class="credits-screen" id="creditsScreen">
+      <div class="credits-container">
+        <div class="movie-title">Una Historia Especial</div>
+        
+        <div class="credit-group">
+          <div class="credit-role">Creado con amor por</div>
+          <!-- Puedes cambiar "Tu Nombre" por tu nombre de pila directo en el HTML -->
+          <div class="credit-name">Tu Nombre</div> 
+        </div>
+
+        <div class="credit-group">
+          <div class="credit-role">Dedicado a la niña más hermosa</div>
+          <div class="credit-name" id="creditProtagonist">Sugey</div>
+        </div>
+
+        <div class="credit-final">
+          <h2>gracias por todo, Te Amo .</h2>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
